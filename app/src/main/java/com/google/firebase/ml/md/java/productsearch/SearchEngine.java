@@ -47,6 +47,7 @@ public class SearchEngine {
 
   public void search(DetectedObject object, SearchResultListener listener) {
     // Crops the object image out of the full image is expensive, so do it off the UI thread.
+    Log.i(TAG, "search: " + object);
     Tasks.call(requestCreationExecutor, () -> createRequest(object))
         .addOnSuccessListener(productRequest -> searchRequestQueue.add(productRequest.setTag(TAG)))
         .addOnFailureListener(
@@ -67,6 +68,8 @@ public class SearchEngine {
     if (objectImageData == null) {
       throw new Exception("Failed to get object image data!");
     }
+
+    Log.i(TAG, "createRequest: Huyu " + searchingObject);
 
     // Hooks up with your own product search backend here.
     throw new Exception("Hooks up with your own product search backend.");

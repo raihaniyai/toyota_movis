@@ -44,6 +44,7 @@ dependencies {
     // MLKit Dependencies
     implementation 'com.google.firebase:firebase-ml-vision:24.0.0'
     implementation 'com.google.firebase:firebase-ml-vision-object-detection-model:19.0.2'
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
 
     api 'com.google.guava:guava:27.1-jre'
 }
